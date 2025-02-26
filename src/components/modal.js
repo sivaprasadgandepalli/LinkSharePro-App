@@ -9,7 +9,7 @@ import { useAuth } from '../contexts/auth';
 import BeatLoader from "react-spinners/BeatLoader";
 
 const Modal = ({ show, onClose, children }) => {
-  const { loading, setLoading, getCurrentUser,flag, setFlag } = useAuth();
+  const { loading, setLoading, getCurrentUser, flag, setFlag } = useAuth();
   const id = getCurrentUser()._id;
   const platformTypes = [
     { name: 'GitHub', Icon: FaGithub },
@@ -49,7 +49,7 @@ const Modal = ({ show, onClose, children }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5555/links/addNewLink", { platformName: addLink.platformName, Url: addLink.Url, id: id });
+      const res = await axios.post("https://linksharepro-app-backend.onrender.com/links/addNewLink", { platformName: addLink.platformName, Url: addLink.Url, id: id });
       if (res.status === 200) {
         setAddLink({
           platformName: '',
