@@ -38,7 +38,7 @@ export default function SignIn() {
         setLoading(true);
 
         try {
-            const res = await axios.post("http://localhost:5555/auth/signin", loginCredentials);
+            const res = await axios.post("https://linksharepro-app-backend.onrender.com/auth/signin", loginCredentials);
             if (res.status === 200) {
                 login(res.data.user, res.data.token);
                 toast.success("Logged in successfully.");

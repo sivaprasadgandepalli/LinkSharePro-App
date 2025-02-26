@@ -33,7 +33,7 @@ export default function MyLink({ item, index}) {
     const deleteLink = async (linkId) => {
         try {
             setLoading(true);
-            const res = await axios.post("http://localhost:5555/links/removeLink", { linkId, id });
+            const res = await axios.post("https://linksharepro-app-backend.onrender.com/links/removeLink", { linkId, id });
             if (res.status === 200) {
                 setFlag(!flag);
                 toast.success("Link deleted successfully!");
@@ -55,7 +55,7 @@ export default function MyLink({ item, index}) {
     const handleSaveClick = async () => {
         try {
             setLoading(true);
-            const res = await axios.post("http://localhost:5555/links/updateLink", { linkId: item._id, id, ...editedLink });
+            const res = await axios.post("https://linksharepro-app-backend.onrender.com/links/updateLink", { linkId: item._id, id, ...editedLink });
             if (res.status === 200) {
                 setFlag(!flag);
                 toast.success("Link updated successfully!");

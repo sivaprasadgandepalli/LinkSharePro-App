@@ -42,12 +42,12 @@ export default function Preview() {
   const fullName = `${firstName} ${lastName}`.trim();
   const userName = fullName ? fullName : '';
 
-  const handleShareClick = () => {
+  const handleShareClick = (linkAddr) => {
     const publicUrl = `${window.location.origin}${window.location.pathname}?view=public`;
     setShareUrl(publicUrl);
     setShowShareModal(true);
 
-    navigator.clipboard.writeText(publicUrl)
+    navigator.clipboard.writeText(linkAddr)
       .then(() => {
         toast.success('Link copied to clipboard!');
       })

@@ -31,7 +31,7 @@ export default function Profile() {
         }
         setLoading(true);
         try {
-            const res = await axios.post("http://localhost:5555/auth/updateProfile",{...user,id});
+            const res = await axios.post("https://linksharepro-app-backend.onrender.com/auth/updateProfile",{...user,id});
             if (res.status === 200) {
                 console.log(res.data);
                 sessionStorage.setItem('user', JSON.stringify(res.data));

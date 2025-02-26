@@ -43,7 +43,7 @@ export default function SignUp() {
         setLoading(true);
 
         try {
-            const res = await axios.post("http://localhost:5555/auth/signup", Credentials);
+            const res = await axios.post("https://linksharepro-app-backend.onrender.com/auth/signup", Credentials);
             if (res.status === 200) {
                 toast.success("Account created successfully.");
                 setCredentials({

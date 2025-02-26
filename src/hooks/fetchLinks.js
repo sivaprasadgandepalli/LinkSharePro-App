@@ -10,7 +10,7 @@ export const useFetchLinks = () => {
         const fetchAllLinks = async () => {
             setLoading(true);
             try {
-                const res = await axios.get(`http://localhost:5555/links/getAllLinks/${id}`);
+                const res = await axios.get(`https://linksharepro-app-backend.onrender.com/links/getAllLinks/${id}`);
                 if (res.status === 200) {
                     console.log(res.data);
                     setAllLinks(res.data.allLinks);
